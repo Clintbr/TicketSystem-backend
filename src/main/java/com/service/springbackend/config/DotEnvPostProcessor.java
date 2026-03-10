@@ -18,6 +18,7 @@ public class DotEnvPostProcessor implements EnvironmentPostProcessor {
             String springbackendDir = Paths.get(".").toAbsolutePath().toString();
             Dotenv dotenv = Dotenv.configure()
                     .directory(springbackendDir)
+                    .ignoreIfMissing()
                     .load();
 
             Map<String, Object> properties = new HashMap<>();
